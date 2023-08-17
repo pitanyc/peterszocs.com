@@ -3,15 +3,23 @@
 //
 
 header.masthead {
-    padding-top: 6rem + 4.5rem;
+    padding-top: 6rem;
     padding-bottom: 6rem;
     text-align: center;
     color: $white;
-    background-image: url("../assets/img/header-bg.jpg");
+    background-image: url("../assets/img/header/miami.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        margin: 0px auto 2rem auto;
+        border-radius: 100%;
+        border: 3px solid #f7f7f7;
+    }
 
     .masthead-subheading {
         font-size: 1.5rem;
@@ -32,9 +40,16 @@ header.masthead {
 
 @include media-breakpoint-up(md) {
     header.masthead {
-        padding-top: 12.5rem + 4.5rem;
-        padding-bottom: 12.5rem;
+        padding-top: 9rem;
+        padding-bottom: 18rem;
 
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            margin: 0px auto 2rem auto;
+            border: 7px solid #f7f7f7;
+        }
+    
         .masthead-subheading {
             font-size: 2.25rem;
             font-style: italic;
