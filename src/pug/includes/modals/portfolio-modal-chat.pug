@@ -1,0 +1,26 @@
+// Portfolio modal chat
+#portfolioModalChat.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+    .modal-dialog
+        .modal-content
+            .close-modal(data-bs-dismiss='modal')
+                img(src='assets/img/close-icon.svg', alt='Close modal')
+            .container
+                .row.justify-content-center
+                    .col-lg-8
+                        .modal-body
+                            // Project details
+                            h2.text-uppercase Chat
+                            p.item-intro.text-muted Feature rich chat application
+                            img.img-fluid.d-block.mx-auto(src='https://cloud.githubusercontent.com/assets/12737838/9482758/7ba4804a-4b65-11e5-81cf-ee29039efc39.png', alt='')
+                            p This is a fully working web chat application. It's a feature rich, client/server Javascript/Java app with smileys, sounds, blinker, standard & custom buddy icons, offline messages, translations, and so forth.
+                            ul.list-inline
+                                li
+                                    strong Demo:
+                                    | https://cairo.peterszocs.com
+                                li
+                                    strong Source:
+                                    | https://github.com/pitanyc/cairo-chat
+                            p.text-muted &copy; 2015-08-18 Apache License 2.0
+                            button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss='modal', type='button')
+                                i.fas.fa-xmark.me-1
+                                | Close Project

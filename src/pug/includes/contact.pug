@@ -2,17 +2,8 @@
 section#contact.page-section
     .container
         .text-center
-            h2.section-heading.text-uppercase Contact Us
-            h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-
-        // * * * * * * * * * * * * * * *
-        // * * SB Forms Contact Form * *
-        // * * * * * * * * * * * * * * *
-
-        // This form is pre-integrated with SB Forms.
-        // To make this form functional, sign up at
-        // https://startbootstrap.com/solution/contact-forms
-        // to get an API token!
+            h2.section-heading.text-uppercase Contact
+            h3.section-subheading.text-muted Please say hi!
 
         form#contactForm(data-sb-form-api-token='API_TOKEN')
             .row.align-items-stretch.mb-5
@@ -41,16 +32,6 @@ section#contact.page-section
                         .invalid-feedback(data-sb-feedback='email:email')
                             | Email is not valid.
 
-                    .form-group.mb-md-0
-
-                        // Phone number input
-                        input#phone.form-control(
-                            type='tel',
-                            placeholder='Your Phone *',
-                            data-sb-validations='required'
-                        )
-                        .invalid-feedback(data-sb-feedback='phone:required')
-                            | A phone number is required.
 
                 .col-md-6
                     .form-group.form-group-textarea.mb-md-0
@@ -64,25 +45,14 @@ section#contact.page-section
                             | A message is required.
 
             // Submit success message
-            //
-            // This is what your users will see when the form
-            // has successfully submitted
-
             #submitSuccessMessage.d-none
                 .text-center.text-white.mb-3
                     .fw-bolder Form submission successful!
-                    | To activate this form, sign up at
-                    br
-                    a(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
 
             // Submit error message
-            //
-            // This is what your users will see when there is
-            // an error submitting the form
-
             #submitErrorMessage.d-none
                 .text-center.text-danger.mb-3 Error sending message!
 
             // Submit Button
             .text-center
-                button#submitButton.btn.btn-primary.btn-xl.text-uppercase.disabled(type='submit') Send Message
+                button#submitButton.btn.btn-primary.btn-xl.text-uppercase(type='submit') Send Message

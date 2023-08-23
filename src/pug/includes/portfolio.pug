@@ -3,79 +3,79 @@ section#portfolio.page-section.bg-light
     .container
         .text-center
             h2.section-heading.text-uppercase Portfolio
-            h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+            h3.section-subheading.text-muted Explore my work on GitHub.
         .row
             .col-lg-4.col-sm-6.mb-4
-                // Portfolio item 1
+                // animated-header
                 .portfolio-item
-                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal1')
+                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModalAnimatedHeader')
                         .portfolio-hover
                             .portfolio-hover-content
                                 i.fas.fa-plus.fa-3x
-                        img.img-fluid(src='assets/img/portfolio/1.jpg', alt='...')
+                        img.img-fluid(src='https://cloud.githubusercontent.com/assets/12737838/9482750/60ff08a0-4b65-11e5-9486-cbb126e0cf63.png', alt='...')
                     .portfolio-caption
-                        .portfolio-caption-heading Threads
-                        .portfolio-caption-subheading.text-muted Illustration
+                        .portfolio-caption-heading Animated Header
+                        .portfolio-caption-subheading.text-muted Responsive on-scroll header component
             .col-lg-4.col-sm-6.mb-4
-                // Portfolio item 2
+                // cairo-chat
                 .portfolio-item
-                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal2')
+                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModalChat')
                         .portfolio-hover
                             .portfolio-hover-content
                                 i.fas.fa-plus.fa-3x
-                        img.img-fluid(src='assets/img/portfolio/2.jpg', alt='...')
+                        img.img-fluid(src='https://cloud.githubusercontent.com/assets/12737838/9482758/7ba4804a-4b65-11e5-81cf-ee29039efc39.png', alt='...')
                     .portfolio-caption
-                        .portfolio-caption-heading Explore
-                        .portfolio-caption-subheading.text-muted Graphic Design
+                        .portfolio-caption-heading Chat
+                        .portfolio-caption-subheading.text-muted Feature rich chat application
             .col-lg-4.col-sm-6.mb-4
-                // Portfolio item 3
+                // desktop
                 .portfolio-item
-                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal3')
+                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModalDesktop')
                         .portfolio-hover
                             .portfolio-hover-content
                                 i.fas.fa-plus.fa-3x
-                        img.img-fluid(src='assets/img/portfolio/3.jpg', alt='...')
+                        img.img-fluid(src='https://cloud.githubusercontent.com/assets/12737838/9482793/ea006194-4b65-11e5-827f-4d84f4fadf90.png', alt='...')
                     .portfolio-caption
-                        .portfolio-caption-heading Finish
-                        .portfolio-caption-subheading.text-muted Identity
+                        .portfolio-caption-heading Desktop
+                        .portfolio-caption-subheading.text-muted Full blown Chromebook application
             .col-lg-4.col-sm-6.mb-4.mb-lg-0
-                // Portfolio item 4
+                // peterszocs.com
                 .portfolio-item
-                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal4')
+                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModalPeterSzocs')
                         .portfolio-hover
                             .portfolio-hover-content
                                 i.fas.fa-plus.fa-3x
-                        img.img-fluid(src='assets/img/portfolio/4.jpg', alt='...')
+                        img.img-fluid(src='https://cloud.githubusercontent.com/assets/12737838/9482803/ff5eec22-4b65-11e5-9cbb-4772d24dec08.png', alt='...')
                     .portfolio-caption
-                        .portfolio-caption-heading Lines
-                        .portfolio-caption-subheading.text-muted Branding
+                        .portfolio-caption-heading Personal Website
+                        .portfolio-caption-subheading.text-muted Source of https://www.peterszocs.com
             .col-lg-4.col-sm-6.mb-4.mb-sm-0
-                // Portfolio item 5
+                // old.peterszocs.com
                 .portfolio-item
-                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal5')
+                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModalOldPeterSzocs')
                         .portfolio-hover
                             .portfolio-hover-content
                                 i.fas.fa-plus.fa-3x
-                        img.img-fluid(src='assets/img/portfolio/5.jpg', alt='...')
+                        img.img-fluid(src='https://cloud.githubusercontent.com/assets/12737838/9482823/3232ddd4-4b66-11e5-8f16-fb80074c4df1.png', alt='...')
                     .portfolio-caption
-                        .portfolio-caption-heading Southwest
-                        .portfolio-caption-subheading.text-muted Website Design
+                        .portfolio-caption-heading Old Personal Website
+                        .portfolio-caption-subheading.text-muted Source of https://old.szocs.info
             .col-lg-4.col-sm-6
-                // Portfolio item 6
+                // tech-hub
                 .portfolio-item
-                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModal6')
+                    a.portfolio-link(data-bs-toggle='modal', href='#portfolioModalTechHub')
                         .portfolio-hover
                             .portfolio-hover-content
                                 i.fas.fa-plus.fa-3x
-                        img.img-fluid(src='assets/img/portfolio/6.jpg', alt='...')
+                        img.img-fluid(src='https://cloud.githubusercontent.com/assets/12737838/9482818/1e210852-4b66-11e5-8652-3ae635682e67.png', alt='...')
                     .portfolio-caption
-                        .portfolio-caption-heading Window
-                        .portfolio-caption-subheading.text-muted Photography
+                        .portfolio-caption-heading Tech Hub
+                        .portfolio-caption-subheading.text-muted Issue tracking system
 
 // Portfolio Modals
-include portfolio-modal-1
-include portfolio-modal-2
-//- include includes/portfolio-modal-3
-//- include includes/portfolio-modal-4
-//- include includes/portfolio-modal-5
-//- include includes/portfolio-modal-6
+include modals/portfolio-modal-animated-header
+include modals/portfolio-modal-chat
+include modals/portfolio-modal-desktop
+include modals/portfolio-modal-old-peterszocs
+include modals/portfolio-modal-peterszocs
+include modals/portfolio-modal-tech-hub

@@ -1,0 +1,26 @@
+// Portfolio modal peterszocs
+#portfolioModalPeterSzocs.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+    .modal-dialog
+        .modal-content
+            .close-modal(data-bs-dismiss='modal')
+                img(src='assets/img/close-icon.svg', alt='Close modal')
+            .container
+                .row.justify-content-center
+                    .col-lg-8
+                        .modal-body
+                            // Project details
+                            h2.text-uppercase Personal Website
+                            p.item-intro.text-muted Source of this website
+                            img.img-fluid.d-block.mx-auto(src='https://cloud.githubusercontent.com/assets/12737838/9482803/ff5eec22-4b65-11e5-9cbb-4772d24dec08.png', alt='')
+                            p This is my personal website. It features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, photos, music and a working contact form.
+                            ul.list-inline
+                                li
+                                    strong Demo:
+                                    | https://www.peterszocs.com
+                                li
+                                    strong Source:
+                                    | https://github.com/pitanyc/peterszocs.com
+                            p.text-muted &copy; 2015-08-18 Apache License 2.0
+                            button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss='modal', type='button')
+                                i.fas.fa-xmark.me-1
+                                | Close Project

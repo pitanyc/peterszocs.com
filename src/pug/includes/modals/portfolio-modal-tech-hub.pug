@@ -1,0 +1,26 @@
+// Portfolio modal tech-hub
+#portfolioModalTechHub.portfolio-modal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+    .modal-dialog
+        .modal-content
+            .close-modal(data-bs-dismiss='modal')
+                img(src='assets/img/close-icon.svg', alt='Close modal')
+            .container
+                .row.justify-content-center
+                    .col-lg-8
+                        .modal-body
+                            // Project details
+                            h2.text-uppercase Tech Hub
+                            p.item-intro.text-muted Issue tracking system
+                            img.img-fluid.d-block.mx-auto(src='https://cloud.githubusercontent.com/assets/12737838/9482818/1e210852-4b66-11e5-8652-3ae635682e67.png', alt='')
+                            p Tech Hub is an issue tracking system. Just as JIRA, Bugzilla and many others, it supports issue tracking on different projects by various users. Administrators have access to additional features such as progress reports on issues, projects and so forth.
+                            ul.list-inline
+                                li
+                                    strong Demo:
+                                    | https://hub.zlocker.com
+                                li
+                                    strong Source:
+                                    | https://github.com/pitanyc/tech-hub
+                            p.text-muted &copy; 2015-08-18 Apache License 2.0
+                            button.btn.btn-primary.btn-xl.text-uppercase(data-bs-dismiss='modal', type='button')
+                                i.fas.fa-xmark.me-1
+                                | Close Project
