@@ -3,14 +3,18 @@ footer.footer.py-4
     .container
         .row.align-items-center
             .col-lg-4.text-lg-start
-                | Copyright &copy; Your Website 2023
+                | &copy; 
+                script document.write(new Date().getFullYear())
+                | Peter Szocs
             .col-lg-4.my-3.my-lg-0
-                a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Twitter')
-                    i.fab.fa-twitter
-                a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='Facebook')
-                    i.fab.fa-facebook-f
-                a.btn.btn-dark.btn-social.mx-2(href='#!', aria-label='LinkedIn')
+                a.btn.btn-dark.btn-social.mx-2(href='https://github.com/pitanyc', aria-label='GitHub')
+                    i.fab.fa-github
+                a.btn.btn-dark.btn-social.mx-2(href='https://www.linkedin.com/in/szocspeter', aria-label='LinkedIn')
                     i.fab.fa-linkedin-in
+                a.btn.btn-dark.btn-social.mx-2(href='https://twitter.com/pitanyc', aria-label='Twitter')
+                    i.fab.fa-twitter
+                a.btn.btn-dark.btn-social.mx-2(href='https://medium.com/@pitanyc', aria-label='Medium')
+                    i.fab.fa-medium
             .col-lg-4.text-lg-end
-                a.link-dark.text-decoration-none.me-3(href='#!') Privacy Policy
-                a.link-dark.text-decoration-none(href='#!') Terms of Use
+                a.link-dark.text-decoration-none.me-3(href='http://24counter.com/vmap/1438798172/', alt='')
+                    img.rounded-circle.img-fluid(src='http://24counter.com/map/view.php?id=1438798172', height='45')
