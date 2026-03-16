@@ -5,48 +5,44 @@ section#contact.page-section
             h2.section-heading.text-uppercase Contact
             h3.section-subheading.text-muted Please say hi!
 
-        form#contactForm(data-sb-form-api-token='API_TOKEN')
+        form#contactForm(action='https://api.web3forms.com/submit', method='POST')
+            input(type='hidden', name='access_key', value='eaaef5e1-5abe-46fb-a619-4ed1cbda82d7')
+            input(type='checkbox', name='botcheck', style='display:none')
+            input(type='hidden', name='subject', value='New contact from peterszocs.com')
+
             .row.align-items-stretch.mb-5
                 .form-group
                     // Name input
                     input#name.form-control(
                         type='text',
+                        name='name',
                         placeholder='Your Name *',
-                        data-sb-validations='required'
+                        required
                     )
-                    .invalid-feedback(data-sb-feedback='name:required')
+                    .invalid-feedback
                         | A name is required.
 
                 .form-group
                     // Email address input
                     input#email.form-control(
                         type='email',
+                        name='email',
                         placeholder='Your Email *',
-                        data-sb-validations='required,email'
+                        required
                     )
-                    .invalid-feedback(data-sb-feedback='email:required')
+                    .invalid-feedback#emailFeedback
                         | An email is required.
-                    .invalid-feedback(data-sb-feedback='email:email')
-                        | Email is not valid.
 
                 .form-group.form-group-textarea.mb-md-0
                     // Message input
                     textarea#message.form-control(
+                        name='message',
                         placeholder='Your Message *',
-                        data-sb-validations='required'
+                        required
                     )
-                    .invalid-feedback(data-sb-feedback='message:required')
+                    .invalid-feedback
                         | A message is required.
-
-            // Submit success message
-            #submitSuccessMessage.d-none
-                .text-center.text-white.mb-3
-                    .fw-bolder Form submission successful!
-
-            // Submit error message
-            #submitErrorMessage.d-none
-                .text-center.text-danger.mb-3 Error sending message!
 
             // Submit Button
             .text-center
-                button#submitButton.btn.btn-primary.btn-xl.disabled.text-uppercase(type='submit', title='Coming Soon') Send Message
+                button#submitButton.btn.btn-primary.btn-xl.text-uppercase(type='submit', disabled) Send Message

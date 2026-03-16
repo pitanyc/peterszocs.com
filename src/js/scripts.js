@@ -46,4 +46,21 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Contact form handling — enable submit only when all fields are valid
+    const contactForm = document.querySelector('#contactForm');
+    if (contactForm) {
+        const nameInput = contactForm.querySelector('#name');
+        const emailInput = contactForm.querySelector('#email');
+        const messageInput = contactForm.querySelector('#message');
+        const submitButton = contactForm.querySelector('#submitButton');
+
+        function checkFormValidity() {
+            submitButton.disabled = !(nameInput.checkValidity() && emailInput.checkValidity() && messageInput.checkValidity());
+        }
+
+        [nameInput, emailInput, messageInput].forEach(function (field) {
+            field.addEventListener('input', checkFormValidity);
+        });
+    }
+
 });

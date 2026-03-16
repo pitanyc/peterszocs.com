@@ -1,6 +1,6 @@
 /*!
 * Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
+* Copyright 2013-2026 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
 */
 //
@@ -50,5 +50,22 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
+
+    // Contact form handling — enable submit only when all fields are valid
+    const contactForm = document.querySelector('#contactForm');
+    if (contactForm) {
+        const nameInput = contactForm.querySelector('#name');
+        const emailInput = contactForm.querySelector('#email');
+        const messageInput = contactForm.querySelector('#message');
+        const submitButton = contactForm.querySelector('#submitButton');
+
+        function checkFormValidity() {
+            submitButton.disabled = !(nameInput.checkValidity() && emailInput.checkValidity() && messageInput.checkValidity());
+        }
+
+        [nameInput, emailInput, messageInput].forEach(function (field) {
+            field.addEventListener('input', checkFormValidity);
+        });
+    }
 
 });
