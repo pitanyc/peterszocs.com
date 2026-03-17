@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-    // Contact form handling — enable submit only when all fields are valid
+    // Contact form handling
     const contactForm = document.querySelector('#contactForm');
     if (contactForm) {
         const nameInput = contactForm.querySelector('#name');
@@ -65,6 +65,41 @@ window.addEventListener('DOMContentLoaded', event => {
 
         [nameInput, emailInput, messageInput].forEach(function (field) {
             field.addEventListener('input', checkFormValidity);
+        });
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            var formData = {};
+            new FormData(contactForm).forEach(function (value, key) {
+                formData[key] = value;
+            });
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(function (response) { return response.json(); })
+            .then(function (data) {
+                if (data.success) {
+                    submitButton.textContent = 'Message Sent!';
+                    contactForm.reset();
+                } else {
+                    submitButton.textContent = 'Something went wrong';
+                }
+            })
+            .catch(function () {
+                submitButton.textContent = 'Something went wrong';
+            })
+            .finally(function () {
+                setTimeout(function () {
+                    submitButton.textContent = 'Send Message';
+                    checkFormValidity();
+                }, 3000);
+            });
         });
     }
 

@@ -33,9 +33,9 @@ No test framework or linter is configured.
 
 **SCSS structure**: `src/scss/styles.scss` imports Bootstrap from node_modules, then layers custom overrides organized as `variables/`, `components/`, and `sections/`. Primary brand color is `#ffc800`.
 
-**Stack**: Bootstrap 5.2.3, Font Awesome 6.3.0 (CDN), Google Fonts (Montserrat, Roboto Slab).
+**Stack**: Bootstrap 5.2.3, Font Awesome 6.5.1 (CDN), Google Fonts (Montserrat, Roboto Slab).
 
 ## Key Conventions
 
 - 4-space indentation, UTF-8, LF line endings (per `.editorconfig`)
-- Contact form uses SB Forms — requires `data-sb-form-api-token` attribute with a valid API token
+- Contact form uses Web3Forms (`web3forms.com`) for submission handling
