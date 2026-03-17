@@ -1,7 +1,7 @@
 /*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2026 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
+* Start Bootstrap - peterszocs.com v7.0.12 (https://www.peterszocs.com)
+* Copyright 2013-2026 Peter Szocs
+* Licensed under MIT (https://github.com/StartBootstrap/peterszocs.com/blob/master/LICENSE)
 */
 //
 // Scripts

@@ -12,9 +12,8 @@ const destPath = upath.resolve(upath.dirname(__filename), '../dist/css/styles.cs
 
 module.exports = function renderSCSS() {
     
-    const results = sass.renderSync({
-        data: entryPoint,
-        includePaths: [
+    const results = sass.compileString(entryPoint, {
+        loadPaths: [
             upath.resolve(upath.dirname(__filename), '../node_modules')
         ],
       });
