@@ -1,5 +1,6 @@
 'use strict';
 const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
 const fs = require('fs');
 const packageJSON = require('../package.json');
 const upath = require('upath');
@@ -23,7 +24,7 @@ module.exports = function renderSCSS() {
         sh.mkdir('-p', destPathDirname);
     }
 
-    postcss([ autoprefixer ]).process(results.css, {from: 'styles.css', to: 'styles.css'}).then(result => {
+    postcss([ autoprefixer, cssnano ]).process(results.css, {from: 'styles.css', to: 'styles.css'}).then(result => {
         result.warnings().forEach(warn => {
             console.warn(warn.toString())
         })

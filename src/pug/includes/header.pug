@@ -1,7 +1,9 @@
 // Header
 header.masthead
     .profile-image
-        img.rounded-circle.img-fluid(src='assets/img/header/headshot.jpg', alt='Peter Szocs')
+        picture
+            source(srcset='assets/img/header/headshot.webp', type='image/webp')
+            img.rounded-circle.img-fluid(src='assets/img/header/headshot-opt.jpg', alt='Peter Szocs')
     .container
         .masthead-subheading Welcome!
         .masthead-heading.text-uppercase It's Nice To Meet You
