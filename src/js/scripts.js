@@ -98,4 +98,81 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
+    // YouTube Lite Embed - Lazy loading with facade pattern
+    if ('IntersectionObserver' in window) {
+        // Preconnect to YouTube domains for faster loading when user clicks
+        const preconnectLinks = [
+            'https://www.youtube-nocookie.com',
+            'https://www.google.com',
+            'https://i.ytimg.com'
+        ];
+
+        preconnectLinks.forEach(function (url) {
+            const link = document.createElement('link');
+            link.rel = 'preconnect';
+            link.href = url;
+            link.crossOrigin = 'anonymous';
+            document.head.appendChild(link);
+        });
+
+        // Intersection Observer for lazy loading thumbnails
+        const videoObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    const videoElement = entry.target;
+                    const videoId = videoElement.dataset.id;
+
+                    // Load YouTube thumbnail
+                    if (videoId) {
+                        videoElement.style.backgroundImage = `url('https://i.ytimg.com/vi/${videoId}/hqdefault.jpg')`;
+                        videoObserver.unobserve(videoElement);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '50px'
+        });
+
+        // Observe all lite-youtube elements
+        const liteVideos = document.querySelectorAll('.lite-youtube');
+        liteVideos.forEach(function (video) {
+            videoObserver.observe(video);
+
+            // Click handler - load iframe on demand
+            video.addEventListener('click', function (e) {
+                e.preventDefault();
+                activateVideo(video);
+            });
+
+            // Keyboard handler - activate on Enter/Space
+            video.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    activateVideo(video);
+                }
+            });
+        });
+
+        // Activate video by loading iframe
+        function activateVideo(videoElement) {
+            if (videoElement.classList.contains('lyt-activated')) {
+                return; // Already activated
+            }
+
+            const videoId = videoElement.dataset.id;
+            if (!videoId) return;
+
+            // Create iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.title = videoElement.getAttribute('aria-label').replace('Play: ', '');
+
+            // Mark as activated and append iframe
+            videoElement.classList.add('lyt-activated');
+            videoElement.appendChild(iframe);
+        }
+    }
+
 });
